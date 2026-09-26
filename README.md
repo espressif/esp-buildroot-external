@@ -1,7 +1,7 @@
 # ESP32-S31 Buildroot External Tree
 
 > **⚠️ Espressif Integration**: This repository provides Buildroot integration and configurations for ESP32S31.
-> **⚠️ Developer Preview**: This branch (`buildroot/v2025.02-esp32s31`) is currently in developer preview and is **not yet recommended for production use**.  
+> **⚠️ Developer Preview**: This branch (`buildroot/v2025.02-esp32s31`) is currently in developer preview and is **not yet recommended for production use**.
 > For branch strategy and maintenance policy, see the [Branch Strategy](#branch-strategy) section below.
 
 This BR2_EXTERNAL tree builds the ESP32-S31 NOR boot stack and root filesystem
@@ -25,13 +25,20 @@ make -C <path-to-buildroot> \
   espressif_esp32s31_function_core_board_nor_defconfig
 ```
 
-The defconfig builds a 32-bit RISC-V musl toolchain and uses these integration
-branches:
+It uses these integration branches:
 
 - OpenSBI: [`integration/v1.6-esp32s31`](https://github.com/espressif/opensbi/tree/integration/v1.6-esp32s31)
 - U-Boot: [`integration/v2024.07-esp32s31`](https://github.com/espressif/u-boot/tree/integration/v2024.07-esp32s31)
 - Linux: [`integration/v6.18-esp32s31`](https://github.com/espressif/linux/tree/integration/v6.18-esp32s31)
 - BSP tools: [`integration/v1.0-esp32s31`](https://github.com/espressif/esp-linux-bsp/tree/integration/v1.0-esp32s31)
+
+The defconfig downloads a prebuilt Espressif RISC-V multilib musl toolchain.
+
+The prebuilt toolchain is provided for x86_64 and AArch64 Linux hosts. For other hosts, add the following after the last line of [configs/espressif_esp32s31_function_core_board_nor_defconfig](configs/espressif_esp32s31_function_core_board_nor_defconfig):
+
+```
+BR2_TOOLCHAIN_BUILDROOT_MUSL=y
+```
 
 ## Build
 
