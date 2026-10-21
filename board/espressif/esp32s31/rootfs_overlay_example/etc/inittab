@@ -1,0 +1,11 @@
+# SPDX-FileCopyrightText: 2026 Espressif Systems (Shanghai) CO LTD
+# SPDX-License-Identifier: CC0-1.0
+#
+# ESP32-S31 example image startup and interactive serial console.
+::sysinit:/bin/mount -a
+::sysinit:/usr/libexec/esp-example-target-setup
+::sysinit:/etc/init.d/S99esp-example start
+console::respawn:/usr/libexec/esp-example-console
+::ctrlaltdel:/sbin/reboot
+::shutdown:/etc/init.d/S99esp-example stop
+::shutdown:/bin/umount -a -r

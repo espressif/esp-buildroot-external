@@ -1,0 +1,13 @@
+#!/bin/sh
+# SPDX-FileCopyrightText: 2026 Espressif Systems (Shanghai) CO LTD
+# SPDX-License-Identifier: CC0-1.0
+
+CONFIG=/etc/esp-example-target.conf
+
+[ -r "$CONFIG" ] || exit 1
+. "$CONFIG"
+
+exec /sbin/getty -n -l /bin/sh \
+	"${ESP_EXAMPLE_CONSOLE_BAUD}" \
+	"${ESP_EXAMPLE_CONSOLE_DEVICE}" \
+	"${ESP_EXAMPLE_CONSOLE_TERM}"
