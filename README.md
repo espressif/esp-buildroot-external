@@ -12,9 +12,14 @@ with Buildroot 2025.02.
 Clone the matching upstream Buildroot release to a local path:
 
 ```sh
-git clone --branch 2025.02 --depth 1 \
+git clone --branch 2025.02.x --depth 1 \
   https://gitlab.com/buildroot.org/buildroot.git <path-to-buildroot>
 ```
+
+Buildroot 2025.02 is an LTS series. Use the latest available `2025.02.x`
+release and keep the checkout updated with upstream bug-fix releases. This
+external tree requires Buildroot 2025.02.11 or newer; older revisions may fail
+to build with recent host GCC versions.
 
 ## Configure
 
