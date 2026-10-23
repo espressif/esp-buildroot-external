@@ -1,0 +1,9 @@
+config BR2_PACKAGE_ESP_LINUX_BLINK
+	bool "ESP Linux GPIO blink"
+	depends on BR2_TOOLCHAIN_HEADERS_AT_LEAST_4_8
+	select BR2_PACKAGE_LIBGPIOD
+	help
+	  Minimal application that blinks an LED through the Linux GPIO
+	  character-device interface and libgpiod.
+
+	  https://github.com/espressif/esp-linux-examples
