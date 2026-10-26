@@ -1,1 +1,3 @@
 source "$BR2_EXTERNAL_ESP_LINUX_BSP_PATH/package/esp-linux-bsp/Config.in"
+source "$BR2_EXTERNAL_ESP_LINUX_BSP_PATH/package/esp-linux-hello-world/Config.in"
+source "$BR2_EXTERNAL_ESP_LINUX_BSP_PATH/package/esp-system-dashboard/Config.in"
