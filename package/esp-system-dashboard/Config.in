@@ -1,0 +1,7 @@
+config BR2_PACKAGE_ESP_SYSTEM_DASHBOARD
+	bool "ESP system dashboard"
+	select BR2_PACKAGE_LIBMICROHTTPD
+	help
+	  Web dashboard that reports system, runtime, and network status.
+
+	  https://github.com/espressif/esp-linux-examples
