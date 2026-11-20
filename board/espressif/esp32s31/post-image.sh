@@ -18,7 +18,7 @@ source "${BR2_CONFIG:-${CONFIG_DIR:+$CONFIG_DIR/.config}}" >/dev/null 2>&1 || tr
 set +a
 
 apply_kernel_overlays() {
-    [ -n "${BR2_LINUX_KERNEL_INTREE_DTSO_NAMES:-}" ] || return
+    [ -n "${BR2_LINUX_KERNEL_INTREE_DTSO_NAMES:-}" ] || return 0
 
     local dtb_name dtb merged_dtb overlay overlay_name
     local overlays=()
