@@ -27,7 +27,7 @@ to build with recent host GCC versions.
 make -C <path-to-buildroot> \
   BR2_EXTERNAL=<path-to-esp-buildroot-external> \
   O=<path-to-output-directory> \
-  espressif_esp32s31_function_core_board_nor_defconfig
+  espressif_esp32s31_function_core_board_1_defconfig
 ```
 
 It uses these integration branches:
@@ -39,7 +39,7 @@ It uses these integration branches:
 
 The defconfig downloads a prebuilt Espressif RISC-V multilib musl toolchain.
 
-The prebuilt toolchain is provided for x86_64 and AArch64 Linux hosts. For other hosts, add the following after the last line of [configs/espressif_esp32s31_function_core_board_nor_defconfig](configs/espressif_esp32s31_function_core_board_nor_defconfig):
+The prebuilt toolchain is provided for x86_64 and AArch64 Linux hosts. For other hosts, add the following after the last line of [configs/espressif_esp32s31_function_core_board_1_defconfig](configs/espressif_esp32s31_function_core_board_1_defconfig):
 
 ```
 BR2_TOOLCHAIN_BUILDROOT_MUSL=y
